@@ -1,0 +1,7 @@
+.FilterFormInput{
+    width: 50%;
+    margin-top: 6px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}

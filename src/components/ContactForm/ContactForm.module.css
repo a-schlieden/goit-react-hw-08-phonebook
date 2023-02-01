@@ -1,0 +1,25 @@
+.form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.formlabel{
+    width: 100%;
+    margin: 5px;
+}
+.forminput{
+    width: 50%;
+    margin-top: 6px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+.formbtn{
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px auto;
+    cursor: pointer;
+}
