@@ -9,3 +9,7 @@ export const SelectedContacts = (state) => {
 export const AllContacts = state => state.contacts.contacts.items;
 export const Status = state => state.contacts.contacts.status;
 export const Filtered = state => state.filter.filter;
+
+
+export const UsesName = state => state.auth.user.name;
+export const IsLoggedIn = state => state.auth.isLoggedIn;
