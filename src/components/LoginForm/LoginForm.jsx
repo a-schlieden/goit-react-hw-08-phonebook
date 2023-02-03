@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { login } from 'redux/authentication/authentication.thunk';
-//import css from './RegisterForm.module.css';
+//import css from './LoginForm.module.css';
 
 const LoginForm = () => {
     const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const LoginForm = () => {
                 Password
                 <input type="password" name="password" value={password} onChange={handleChange} />
             </label>
-            <button type="submit">Register</button>
+            <button type="submit">Login</button>
         </form>
     );
 };

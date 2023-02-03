@@ -1,21 +1,30 @@
-import { NavLink } from 'react-router-dom';
-//import { useAuth } from 'hooks';
 
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { IsLoggedIn } from "../../redux/selectors"
 
 const MainMenu = () => {
     //const { isLoggedIn } = useAuth();
+    const IsLoggin = useSelector(IsLoggedIn)
 
     return (
         <nav>
-            <NavLink to="/">
-                Home
-            </NavLink>
-            {/* {isLoggedIn && ( */}
-            <NavLink to="/contacts">
-                Contacts
-            </NavLink>
-            {/* )} */}
+            <ul>
+                <li>
+                    <NavLink to="/" >
+                        Home
+                    </NavLink>
+                </li>
+                {/* {isLoggedIn && ( */}
+                <li>
+                    <NavLink to="/contacts">
+                        Contacts
+                    </NavLink>
+                </li>
+                {/* )} */}
+            </ul>
         </nav>
+
     );
 };
 

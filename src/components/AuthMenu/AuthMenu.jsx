@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 const AuthMenu = () => {
     return (
         <div>
+            <h3>Auth menu</h3>
             <ul>
                 <li>
                     <NavLink to="/register">

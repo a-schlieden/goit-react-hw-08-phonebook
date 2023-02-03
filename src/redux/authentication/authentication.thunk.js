@@ -6,10 +6,10 @@ axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 
 const authToken = {
     set(token) {
-        axios.defaults.headers.common.Autorization = `Bearer ${token}`
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`
     },
     unset() {
-        axios.defaults.headers.common.Autorization = ``
+        axios.defaults.headers.common.Authorization = ``
     }
 }
 
@@ -19,7 +19,7 @@ export const register = createAsyncThunk(
     async (credentials, thunkAPI) => {
         try {
             const response = await axios.post("/users/signup", credentials);
-            // authToken.set(response.data.token)
+            authToken.set(response.data.token)
             toast.success('Success !');
             return response.data;
         } catch (err) {
@@ -34,8 +34,43 @@ export const login = createAsyncThunk(
     async (credentials, thunkAPI) => {
         try {
             const response = await axios.post("/users/login", credentials);
-            // authToken.set(response.data.token)
+            authToken.set(response.data.token)
             //toast.success('Success !');
+            return response.data;
+        } catch (err) {
+            //toast.error('Error !');
+            return thunkAPI.rejectWithValue(err.message);
+        }
+    }
+);
+
+export const logout = createAsyncThunk(
+    "auth/logout",
+    async (_, thunkAPI) => {
+        try {
+            await axios.post("/users/logout");
+            authToken.unset()
+            //toast.success('Success !');
+        } catch (err) {
+            //toast.error('Error !');
+            return thunkAPI.rejectWithValue(err.message);
+        }
+    }
+);
+
+export const refreshUser = createAsyncThunk(
+    "auth/refresh",
+    async (_, thunkAPI) => {
+        const usersState = thunkAPI.getState();
+        const usersToken = usersState.auth.token
+
+        if (usersToken === null) {
+            return thunkAPI.rejectWithValue();
+            // return usersState
+        }
+        authToken.set(usersToken)
+        try {
+            const response = await axios.get("/users/current");
             return response.data;
         } catch (err) {
             //toast.error('Error !');
