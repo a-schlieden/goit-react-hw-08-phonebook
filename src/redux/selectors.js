@@ -13,3 +13,4 @@ export const Filtered = state => state.filter.filter;
 
 export const UsersName = state => state.auth.user.name;
 export const IsLoggedIn = state => state.auth.isLoggedIn;
+export const IsRefreshing = state => state.auth.isRefreshing;
