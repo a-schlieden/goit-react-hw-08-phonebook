@@ -1,5 +1,6 @@
 .headerWrap{
    width: 20%;
-   margin-left: 2%;
+   /* margin-left: 2%; */
+   text-align: center;
    border-right: 2px solid red;
 }

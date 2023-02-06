@@ -6,8 +6,14 @@ export const ContactListItem = ({ name, number, deleteContact }) => {
 
   return (
     <>
-      <p>{name}</p>
-      <p>{number}</p>
+      <div
+        style={{
+          display: 'flex'
+        }}
+      >
+        <p>{name}</p>
+        <p>{number}</p>
+      </div>
       <button onClick={deleteContact} className={style.contactListBtn}>
         Remove
       </button>

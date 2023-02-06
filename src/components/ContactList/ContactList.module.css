@@ -1,18 +1,27 @@
+
+.contactwrap{
+    width: 49%;
+}
+
+.contactList{
+width: 100%;
+margin: 0 auto;
+}
+
 .contactListItem{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid green;
+    margin: 5px 0 5px 0;
+    border-radius: 6px;
+}
+
+.contactListItem:hover{
+    background-color: greenyellow;
 }
 
 .contactListItem p{
    margin-right: 15px;
 }
 
-.contactListBtn{
-    background: white;
-    padding: 6px;
-    border: 1px solid black;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-}

@@ -25,8 +25,8 @@ export const ContactList = () => {
     }
 
     return (
-        <>
-            <h3>My contacts </h3>
+        <div className={style.contactwrap}>
+            <h2>My contacts </h2>
             {(status === STATUS.idle || status === STATUS.loading) && <Loader />}
 
             {FilteredContacts.length === 0 ?
@@ -49,7 +49,7 @@ export const ContactList = () => {
                     </>
                 )
             }
-        </>
+        </div>
     );
 };
 

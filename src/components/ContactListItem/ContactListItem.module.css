@@ -1,9 +1,5 @@
 .contactListBtn{
-    background: white;
-    padding: 6px;
-    border: 1px solid black;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
+    background: red;
+    margin: 0;
+
 }

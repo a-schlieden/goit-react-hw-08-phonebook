@@ -14,12 +14,15 @@ export const Filter = () => {
   }
 
   return (
-    <label>
-      <input className={style.FilterFormInput}
-        type="text"
-        value={filter}
-        onChange={(event) => onFilterChange(event.target.value)} />
-    </label>
+    <div className={style.filterwrapp}>
+      <h3>Find contacts by name</h3>
+      <label>
+        <input
+          type="text"
+          value={filter}
+          onChange={(event) => onFilterChange(event.target.value)} />
+      </label>
+    </div>
   );
 };
 

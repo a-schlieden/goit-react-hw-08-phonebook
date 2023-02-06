@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { login } from 'redux/authentication/authentication.thunk';
-//import css from './LoginForm.module.css';
+import style from './LoginForm.module.css';
 
 const LoginForm = () => {
     const dispatch = useDispatch();
@@ -29,15 +29,17 @@ const LoginForm = () => {
 
     return (
         <form onSubmit={handleSubmit} autoComplete="off">
-            <label >
+            <label>
                 Email
+                <br />
                 <input type="email" name="email" value={email} onChange={handleChange} />
             </label>
             <label>
                 Password
+                <br />
                 <input type="password" name="password" value={password} onChange={handleChange} />
             </label>
-            <button type="submit">Login</button>
+            <button className={style.loginbtn} type="submit">Login</button>
         </form>
     );
 };

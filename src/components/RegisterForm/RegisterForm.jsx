@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { register } from 'redux/authentication/authentication.thunk';
-//import css from './RegisterForm.module.css';
+import style from './RegisterForm.module.css';
 
 const RegisterForm = () => {
     const dispatch = useDispatch();
@@ -26,7 +26,6 @@ const RegisterForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(register({ name, email, password }));
-        //form.reset();
         setName('');
         setEmail('');
         setPassword('');
@@ -36,17 +35,20 @@ const RegisterForm = () => {
         <form onSubmit={handleSubmit} autoComplete="off">
             <label >
                 Username
+                <br />
                 <input type="text" name="name" value={name} onChange={handleChange} />
             </label>
             <label >
                 Email
+                <br />
                 <input type="email" name="email" value={email} onChange={handleChange} />
             </label>
             <label>
                 Password
+                <br />
                 <input type="password" name="password" value={password} onChange={handleChange} />
             </label>
-            <button type="submit">Register</button>
+            <button className={style.regbtn} type="submit">Register</button>
         </form>
     );
 };
