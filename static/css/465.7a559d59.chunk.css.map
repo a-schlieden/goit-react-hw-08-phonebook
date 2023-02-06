@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/465.7a559d59.chunk.css","mappings":"AACA,2BACI,kBACJ,CACA,iCACI,kBACJ","sources":["components/LoginForm/LoginForm.module.css"],"sourcesContent":["\n.loginbtn{\n    background: #95eec8\n}\n.loginbtn:hover{\n    background: #5e7aee;\n}"],"names":[],"sourceRoot":""}
