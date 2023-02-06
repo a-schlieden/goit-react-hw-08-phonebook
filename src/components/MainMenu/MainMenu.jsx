@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { IsLoggedIn } from "../../redux/selectors"
 
 const MainMenu = () => {
-    //const { isLoggedIn } = useAuth();
+
     const IsLoggin = useSelector(IsLoggedIn)
 
     return (
@@ -15,13 +15,13 @@ const MainMenu = () => {
                         Home
                     </NavLink>
                 </li>
-                {/* {isLoggedIn && ( */}
-                <li>
-                    <NavLink to="/contacts">
-                        Contacts
-                    </NavLink>
-                </li>
-                {/* )} */}
+                {IsLoggin && (
+                    <li>
+                        <NavLink to="/contacts">
+                            Contacts
+                        </NavLink>
+                    </li>
+                )}
             </ul>
         </nav>
 

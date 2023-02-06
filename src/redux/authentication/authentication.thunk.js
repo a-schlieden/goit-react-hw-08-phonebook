@@ -23,7 +23,6 @@ export const register = createAsyncThunk(
             toast.success('Success !');
             return response.data;
         } catch (err) {
-            //toast.error('Error !');
             return thunkAPI.rejectWithValue(err.message);
         }
     }
@@ -35,10 +34,8 @@ export const login = createAsyncThunk(
         try {
             const response = await axios.post("/users/login", credentials);
             authToken.set(response.data.token)
-            //toast.success('Success !');
             return response.data;
         } catch (err) {
-            //toast.error('Error !');
             return thunkAPI.rejectWithValue(err.message);
         }
     }
@@ -50,9 +47,7 @@ export const logout = createAsyncThunk(
         try {
             await axios.post("/users/logout");
             authToken.unset()
-            //toast.success('Success !');
         } catch (err) {
-            //toast.error('Error !');
             return thunkAPI.rejectWithValue(err.message);
         }
     }
@@ -66,14 +61,12 @@ export const refreshUser = createAsyncThunk(
 
         if (usersToken === null) {
             return thunkAPI.rejectWithValue();
-            // return usersState
         }
         authToken.set(usersToken)
         try {
             const response = await axios.get("/users/current");
             return response.data;
         } catch (err) {
-            //toast.error('Error !');
             return thunkAPI.rejectWithValue(err.message);
         }
     }
